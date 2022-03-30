@@ -1,0 +1,139 @@
+@import '../../scss/colors';
+@import '../../scss/globals';
+
+.col-title {
+  font-size: 120%;
+  font-weight: 600;
+}
+
+.line {
+  border-bottom: solid 1px $color-light-grey;
+}
+
+.sid {
+  font-style: italic;
+  }
+  
+  .result-card {
+    cursor: default;
+    padding: 10px 0;
+    box-shadow: 0px 2px 6px 1px rgba(102,102,102,0.2);
+    border-radius: $border-radius;
+    background: white;
+    // border: 1px solid $color-light-grey;
+    transition: 0.3s;
+   margin: 10px;
+  
+    &:hover {
+      $shadow: 170;
+      box-shadow: 0px 3px 8px 3px rgba($shadow,$shadow,$shadow,0.45);
+    }
+  
+    .name {
+      font-size: 110%;
+      font-weight: 600;
+      cursor: text;
+  
+    }
+  
+    a {
+      border-bottom: 1px solid transparent;
+      transition: 0.3s;
+      color: $palette-1-dark;
+      font-weight: 500;
+      font-size: 90%;
+  
+      &:hover {
+        border-color: $palette-1;
+        text-decoration: none;
+      }
+    }
+  
+    .write-icon {
+      font-weight: 500;
+      font-size: 110%;
+      transition: 0.3s;
+  
+      &:hover {
+        color: $palette-1-dark;
+      }
+    }
+  }
+  
+  
+  .result-card-input {
+    transition: 0.3s;
+  
+    border: none;
+    border-bottom: 2px solid transparent;
+  
+    outline: none!important;
+    text-align: center;
+  
+    max-width: 90%;
+
+    font-size: 1.25rem;
+  
+    &:hover:not(:focus) {
+      border-color: $palette-1-light;
+    }
+  
+    &:focus {
+      border-color: $palette-1-dark;
+    }
+  }
+  
+
+  .kbl-table {
+
+    overflow: hidden;
+    border-radius: $border-radius;
+    box-shadow: 0 .0925rem .165rem rgba(0, 0, 0, 0.19);
+    border: none;
+
+  
+  
+    .kbl-thead {
+      background: $palette-2;
+      border-bottom: 1px solid $color-light-grey;
+      color: white;
+  
+    
+    }
+
+    .ant-table-thead > tr > th {
+      position: relative;
+      color: rgba(0,0,0,.85);
+      font-weight: 500;
+      text-align: left;
+      background: #1890ff;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background .3s ease;
+    }
+
+    .ant-table-cell-scrollbar {
+      box-shadow: 0 1px 0 1px #1890ff;
+    }
+  
+    tr {
+      border-bottom: 1px solid $color-light-grey;
+  
+      &:last-child {
+        border-bottom: none!important;
+      }
+    }
+  }
+
+
+
+.table-responsived {
+  padding: 5px 2px;
+  border: none;
+  display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 400px;
+border: none;
+padding: 5px 2px;
+}
+  
