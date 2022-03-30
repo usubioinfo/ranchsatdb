@@ -95,7 +95,7 @@ class TableComponent extends React.Component {
 
         // const data =`http://localhost:3000/api/?page=${page}&size=10&motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}`
         console.log(`http://localhost:3000/api/?page=${page}&size=10&motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}`)
-        axios.get(`http://129.123.62.191:3000/api/?page=${page}&size=10&motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}&table=${stable}`)
+        axios.get(`http://localhost:3603/api/?page=${page}&size=10&motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}&table=${stable}`)
             .then(res => {
                 const List = res.data;
                 
@@ -116,7 +116,7 @@ class TableComponent extends React.Component {
         let min = this.state.Mmin
        
 
-        axios.get(`http://129.123.62.191:3000/api/total/?motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}&table=${stable}`)
+        axios.get(`http://localhost:3603/api/total/?motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}&table=${stable}`)
             .then(res => {
                 // console.log(res.data)
                 const dl = Math.ceil(res.data / this.state.perPage)

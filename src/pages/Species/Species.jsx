@@ -65,7 +65,7 @@ export const Species = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const results = await axios.get("http://129.123.62.191:3000/api/sinfo");
+            const results = await axios.get("http://localhost:3603/api/sinfo");
             setinfodata(results.data);
             setisloading(false);
             return results
