@@ -4,6 +4,7 @@ import ReactPaginate from 'react-paginate';
 import './Table.scss';
 import { Divider, Button } from 'antd';
 import Table from 'react-bootstrap/Table'
+import { env } from '../../env.js';
 
 const dfiled = [
     'chromosome',
@@ -18,12 +19,12 @@ const dfiled = [
     'gene_end',
     'strand',
     'annotation'
-   
+
 ];
-let stable="bos_taurus"
+let stable = "bos_taurus"
 const tdata = JSON.parse(localStorage.getItem('species'))
-if (tdata){
-     stable = tdata[0].table 
+if (tdata) {
+    stable = tdata[0].table
 }
 
 
@@ -38,14 +39,14 @@ class TableComponent extends React.Component {
             perPage: 10,
             currentPage: 1,
             pageCount: 20,
-            chromosome:'',
-            start:'',
-            stop:'',
-            motif:'',
+            chromosome: '',
+            start: '',
+            stop: '',
+            motif: '',
             mtype: '',
-            Mmin:'',
-            annotation:'',
-            total:0 ,
+            Mmin: '',
+            annotation: '',
+            total: 0,
         };
 
         this.handlePageClick = this
@@ -54,36 +55,36 @@ class TableComponent extends React.Component {
         this.handleChange = this
             .handleChange
             .bind(this);
-        this.handleChangeMotif= this
-        .handleChangeMotif
-        .bind(this);
+        this.handleChangeMotif = this
+            .handleChangeMotif
+            .bind(this);
         this.handleSearch = this
-        .handleSearch
-        .bind(this);
+            .handleSearch
+            .bind(this);
         this.handleChromosome = this
-        .handleChromosome
-        .bind(this);
+            .handleChromosome
+            .bind(this);
         this.handleStart = this
-        .handleStart
-        .bind(this);
+            .handleStart
+            .bind(this);
         this.handleStop = this
-        .handleStop
-        .bind(this);
+            .handleStop
+            .bind(this);
         this.handleMin = this
-        .handleMin
-        .bind(this);
+            .handleMin
+            .bind(this);
         this.handleClear = this
-        .handleClear
-        .bind(this)
-       
+            .handleClear
+            .bind(this)
+
     }
     // Query for API
 
     // Get data from API
     getData() {
 
-     
-        let page= this.state.currentPage;
+
+        let page = this.state.currentPage;
         let motif = this.state.motif
         let type = this.state.mtype
         let chromosome = this.state.chromosome
@@ -91,14 +92,12 @@ class TableComponent extends React.Component {
         let start = this.state.start
         let stop = this.state.stop
         let min = this.state.Mmin
- 
 
-        // const data =`http://localhost:3000/api/?page=${page}&size=10&motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}`
-        // console.log(`http://localhost:3000/api/?page=${page}&size=10&motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}`)
-        axios.get(`http://bioinfo.usu.edu/ranchbackend/api/?page=${page}&size=10&motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}&table=${stable}`)
+
+        axios.get(`${env.BACKEND}/api/?page=${page}&size=10&motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}&table=${stable}`)
             .then(res => {
                 const List = res.data;
-                
+
 
                 this.setState({ List })
             })
@@ -114,16 +113,16 @@ class TableComponent extends React.Component {
         let start = this.state.start
         let stop = this.state.stop
         let min = this.state.Mmin
-       
 
-        axios.get(`http://bioinfo.usu.edu/ranchbackend/api/total/?motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}&table=${stable}`)
+
+        axios.get(`${env.BACKEND}/api/total/?motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}&table=${stable}`)
             .then(res => {
                 // console.log(res.data)
                 const dl = Math.ceil(res.data / this.state.perPage)
 
                 console.log(dl)
-                this.setState({ pageCount: dl , total: parseInt(res.data)})
-                
+                this.setState({ pageCount: dl, total: parseInt(res.data) })
+
             })
             .catch(err => console.log(err))
     }
@@ -197,10 +196,10 @@ class TableComponent extends React.Component {
         event.preventDefault();
         const motif = event.target.value.toUpperCase()
         this.setState({
-            motif:motif,
+            motif: motif,
             currentPage: 0,
             offset: 0,
-            
+
         }, () => {
             this.getData()
             this.getTotal()
@@ -211,10 +210,10 @@ class TableComponent extends React.Component {
         event.preventDefault();
         const chr = event.target.value
         this.setState({
-            chromosome:chr,
+            chromosome: chr,
             currentPage: 0,
             offset: 0,
-            
+
         }, () => {
             this.getData()
             this.getTotal()
@@ -230,60 +229,60 @@ class TableComponent extends React.Component {
         const selectedOption = select.options[select.selectedIndex];
         const choice = selectedOption.value
         this.setState({
-            mtype:choice,
-            currentPage:0,
-            
+            mtype: choice,
+            currentPage: 0,
+
         }, () => {
             this.getData()
             this.getTotal()
         });
-        
-      }
 
-      handleChange(event) {
+    }
+
+    handleChange(event) {
         event.preventDefault();
         const select = event.target;
         const selectedOption = select.options[select.selectedIndex];
         const choice = selectedOption.value
         this.setState({
-            annotation:choice,
+            annotation: choice,
             currentPage: 0,
             offset: 0,
         }, () => {
             this.getData()
             this.getTotal()
         });
-        
-      }
 
-      handleStart (e){
-          e.preventDefault();
-          const start = e.target.value;
-          this.setState({
-              start : start,
-              currentPage: 0,
-              offset: 0,
-          }, () => {
-            this.getData()
-            this.getTotal()
-          });
-      }
+    }
 
-
-      handleStop (e){
+    handleStart(e) {
         e.preventDefault();
-        const stop = e.target.value;
+        const start = e.target.value;
         this.setState({
-            stop : stop,
+            start: start,
             currentPage: 0,
             offset: 0,
         }, () => {
-          this.getData()
-          this.getTotal()
+            this.getData()
+            this.getTotal()
         });
     }
 
-    handleMin(e){
+
+    handleStop(e) {
+        e.preventDefault();
+        const stop = e.target.value;
+        this.setState({
+            stop: stop,
+            currentPage: 0,
+            offset: 0,
+        }, () => {
+            this.getData()
+            this.getTotal()
+        });
+    }
+
+    handleMin(e) {
         e.preventDefault();
         const min = e.target.value;
         this.setState({
@@ -291,32 +290,32 @@ class TableComponent extends React.Component {
             currentPage: 0,
             offset: 0,
         }, () => {
-          this.getData()
-          this.getTotal()
+            this.getData()
+            this.getTotal()
         });
     }
-    
+
     handleClear(e) {
 
-    e.preventDefault();
+        e.preventDefault();
         this.setState({
-            chromosome:'',
+            chromosome: '',
             start: '',
             stop: '',
-            motif:'',
+            motif: '',
             mtype: '',
-            Mmin:'',
-            annotation:'',
+            Mmin: '',
+            annotation: '',
             currentPage: 0,
             offset: 0,
 
         }, () => {
             this.getData()
             this.getTotal()
-          });
+        });
     }
 
-    render() { 
+    render() {
         return (
             <div>
                 <Divider />
@@ -328,7 +327,7 @@ class TableComponent extends React.Component {
                     <div className="col-sm-1">
                         <div className="form-inline">
                             <label className="label-text">Chromosome</label>
-                            <input className="form-control" type="text" value={this.state.chromosome}onChange={this.handleChromosome}></input>
+                            <input className="form-control" type="text" value={this.state.chromosome} onChange={this.handleChromosome}></input>
                         </div>
                     </div>
                     <div className="col-sm-2">
@@ -376,12 +375,12 @@ class TableComponent extends React.Component {
 
                     </div>
 
-                    
+
                     <div className="col-sm-2">
                         <div className="form-inline">
                             <label className="label-text">Annotation </label>
                             <select value={this.state.annotation} className="form-select" onChange={this.handleChange} >
-                               <option value=''>All</option>
+                                <option value=''>All</option>
                                 <option value="Exon">Exon</option>
 
                                 <option value="Intron">Intron</option>
@@ -402,7 +401,7 @@ class TableComponent extends React.Component {
                     </div>
 
                     <div className="col-sm-4 mt-4">
-                        <h5> Showing {this.state.offset+1} to {this.state.offset+10} of {this.state.total} Repeat Motifs</h5>
+                        <h5> Showing {this.state.offset + 1} to {this.state.offset + 10} of {this.state.total} Repeat Motifs</h5>
                     </div>
 
                 </div>

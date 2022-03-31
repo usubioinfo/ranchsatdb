@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Data from './speciesInfo.json';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -6,7 +6,7 @@ import { Divider, Table } from 'antd';
 import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import './species.scss';
-
+import { env } from '../../env';
 import { Doughnut, Bar } from 'react-chartjs-2';
 import { Chart, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement } from 'chart.js';
 import "bootstrap";
@@ -61,11 +61,10 @@ export const Species = () => {
 
     let [infodata, setinfodata] = useState([])
 
-    let [isloading, setisloading] = useState(true)
 
     useEffect(() => {
         const fetchData = async () => {
-            const results = await axios.get("http://localhost:3603/api/sinfo");
+            const results = await axios.get(`${env.BACKEND}/api/sinfo`);
             setinfodata(results.data);
             setisloading(false);
             return results
