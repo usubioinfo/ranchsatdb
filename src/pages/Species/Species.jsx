@@ -59,22 +59,6 @@ const columns = [
 ]
 export const Species = () => {
 
-    let [infodata, setinfodata] = useState([])
-
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const results = await axios.get(`${env.BACKEND}/api/sinfo`);
-            setinfodata(results.data);
-            
-            return results
-        }
-
-        fetchData();
-    }, []);
-
-    console.log(infodata)
-
     const { id } = useParams();
 
     let fd = Data.filter(function (i) {
@@ -83,6 +67,24 @@ export const Species = () => {
 
     localStorage.setItem('species', JSON.stringify(fd))
 
+
+    let [infodata, setinfodata] = useState([])
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const results = await axios.get(`${env.BACKEND}/api/sinfo?infotable=${fd[0].info}`);
+            setinfodata(results.data);
+            
+            return results
+        }
+
+        fetchData();
+    }, []);
+
+   
+
+    
 
 
 

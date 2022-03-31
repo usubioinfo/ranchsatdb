@@ -4,6 +4,7 @@
         "id": "1",
         "name": "Bos taurus",
         "table": "bos_taurus",
+        "info": "bosdata",
         "fasta": "bostaurus.fasta",
         "total": "1,176,611",
         "gmb": "16.62",
