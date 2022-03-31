@@ -35,7 +35,7 @@
     "start": "react-dotenv && react-scripts start",
     "local": "serve -s build -l 3602",
     "build": "react-dotenv && react-scripts build",
-    "update": "git pull origin master && npm i && npm run build && pm2 restart ranchsatdb",
+    "update": "git pull origin master && npm i && react-dotenv && react-scripts build && pm2 restart ranchsatdb",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
