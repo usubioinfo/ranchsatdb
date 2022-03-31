@@ -4,7 +4,7 @@ import ReactPaginate from 'react-paginate';
 import './Table.scss';
 import { Divider, Button } from 'antd';
 import Table from 'react-bootstrap/Table'
-import { env } from '../../../env.js/index.js';
+import { env } from '../../env.js/index.js.js';
 
 const dfiled = [
     'chromosome',

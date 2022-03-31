@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { env } from '../../../env';
+import { env } from '../../env';
 export const fetchPrimers = async (data, minS, maxS, minTM, maxTM, minGC, maxGC)=>{
 
     // data['flank'] = flank

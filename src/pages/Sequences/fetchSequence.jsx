@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { env } from '../../../env';
+import { env } from '../../env';
 export const fetchSequence = async (mdata, flank, filename )=>{
 
   for (let data of mdata) {
