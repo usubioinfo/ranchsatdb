@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { env } from '../../env.js';
+import { env } from '../../../env.js/index.js';
 import './RNavbar.scss';
 import lablogo from './lab_logo_red.png';
 import usulogo from './usulogo2.png';

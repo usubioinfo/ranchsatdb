@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
-import { env } from './env.js';
+import { env } from '../env.js/index.js';
 import { RNavbar } from './components/RNavbar/RNavbar';
 import { Home } from './pages/Home/Home';
 import { Species } from "./pages/Species/Species";

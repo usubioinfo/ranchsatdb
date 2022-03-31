@@ -6,7 +6,7 @@ import { Divider, Table } from 'antd';
 import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import './species.scss';
-import { env } from '../../env';
+import { env } from '../../../env';
 import { Doughnut, Bar } from 'react-chartjs-2';
 import { Chart, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement } from 'chart.js';
 import "bootstrap";
