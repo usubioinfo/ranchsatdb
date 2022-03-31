@@ -66,7 +66,7 @@ export const Species = () => {
         const fetchData = async () => {
             const results = await axios.get(`${env.BACKEND}/api/sinfo`);
             setinfodata(results.data);
-            setisloading(false);
+            
             return results
         }
 
