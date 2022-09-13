@@ -1,10 +1,9 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import "antd/dist/antd.min.css";
-import { Slider, Divider, Button, Tabs } from 'antd';
+import { Slider, Divider, Button} from 'antd';
 import { fetchPrimers } from './fetchPrimers';
 import './Primers.scss';
-const { TabPane } = Tabs;
 const mdata = JSON.parse(localStorage.getItem('primerdata'));
 
 const spdata = JSON.parse(localStorage.getItem('species'))

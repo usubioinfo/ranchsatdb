@@ -81,7 +81,7 @@ export const Species = () => {
         }
 
         fetchData();
-    }, []);
+    }, [fd]);
 
    
 

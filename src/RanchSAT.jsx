@@ -7,6 +7,7 @@ import { Species } from "./pages/Species/Species";
 import {Results} from "./pages/Results/Results";
 import Sequences from './pages/Sequences/Sequences'
 import Primers from './pages/Primers/Primers.jsx';
+import { Prediction } from 'pages/Prediction/Prediction';
 
 import {
     BrowserRouter as Router,
@@ -37,6 +38,10 @@ export class RanchSAT extends Component {
                     
                     </Route>
                     <Route path={`${env.BASE_URL}/primers`} element={<Primers />}>
+                    
+                    </Route>
+                    
+                    <Route path={`${env.BASE_URL}/tools`} element={<Prediction />}>
                     
                     </Route>
                     <Route path={`${env.BASE_URL}/species/:id`} element={<Species />}></Route>

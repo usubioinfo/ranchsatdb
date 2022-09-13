@@ -11,7 +11,7 @@ export class Home extends Component{
           <Container >
             <Row className="mb-2"></Row>
             </Container>
-           
+           Hello
            </div>
         )
     }

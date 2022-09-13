@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import { env } from '../../env';
 import './RNavbar.scss';
 import lablogo from './lab_logo_red.png';
@@ -43,10 +44,7 @@ return(
     </div>
     <div className=" col-md-6 mt-2 nav-wrapper mx-auto">
         <Navbar className="justify-content-center">
-          {/* <Navbar.Brand className="h-brand">
-            <b>ranchSATdb</b>
-          </Navbar.Brand> */}
-
+      
           <Nav className="">
             <Nav.Link href= {`${env.BASE_URL}/home`} className={'home' === this.props.active ? active : className}>
               Home
@@ -54,9 +52,16 @@ return(
             <Nav.Link href= {`${env.BASE_URL}/species/1`} className={'species' === this.props.active ? active : className}>
               Species
             </Nav.Link>
-            <Nav.Link href="/tools" className={'tools' === this.props.active ? active : className}>
-              Tools
-            </Nav.Link>
+            <NavDropdown title="Tools" id="basic-nav-dropdown">
+              <NavDropdown.Item href={`${env.BASE_URL}/blast`} className={'blast' === this.props.active ? active : className}>
+                BLAST
+              </NavDropdown.Item>
+              <NavDropdown.Item href={`${env.BASE_URL}/tools`} className={'tools' === this.props.active ? active : className}>
+               SSR Prediction
+              </NavDropdown.Item>
+             
+            </NavDropdown>
+            
             <Nav.Link href="/help" className={'help' === this.props.active ? active : className}>
               Help
             </Nav.Link>
