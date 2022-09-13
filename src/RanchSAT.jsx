@@ -28,7 +28,7 @@ export class RanchSAT extends Component {
                  <Container fluid className='App px-4'>
                  <RNavbar active={document.location.pathname.split('/')[this.state.baseUrlLen]}/>
                 <Routes>
-                    <Route path={`${env.BASE_URL}/home`} element={<Home />}>
+                    <Route path={`${env.BASE_URL}/`} element={<Home />}>
                     
                     </Route>
                     <Route path={`${env.BASE_URL}/results`} element={<Results />}>

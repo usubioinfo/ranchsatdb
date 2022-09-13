@@ -1,0 +1,28 @@
+@import '../../scss/colors';
+@import '../../scss/globals';
+
+
+.kbl-table {
+
+    overflow: hidden;
+    border-radius: $border-radius;
+    box-shadow: 0 .0925rem .165rem rgba(0, 0, 0, 0.19);
+    border: none;
+
+  
+  
+    .kbl-thead {
+      background: $palette-2;
+      border-radius: $border-radius;
+      border-bottom: 1px solid $color-light-grey;
+      color: white;
+  
+    
+    }
+}
+
+
+.pinfo{
+    text-align:justify;
+    font-size: 18px;
+}
