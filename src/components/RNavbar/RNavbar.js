@@ -103,7 +103,7 @@ class RNavbar extends React.Component {
 
                 </NavDropdown>
 
-                <Nav.Link href="/help" className={'help' === this.props.active ? active : className}>
+                <Nav.Link href={`${env.BASE_URL}/help`} className={'help' === this.props.active ? active : className}>
                   Help
                 </Nav.Link>
               </Nav>
