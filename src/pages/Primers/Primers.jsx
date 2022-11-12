@@ -4,6 +4,7 @@ import "antd/dist/antd.min.css";
 import { Slider, Divider, Button} from 'antd';
 import { fetchPrimers } from './fetchPrimers';
 import './Primers.scss';
+import {downloadCsv} from '../../components/Download/Download';
 const mdata = JSON.parse(localStorage.getItem('primerdata'));
 
 const spdata = JSON.parse(localStorage.getItem('species'))
@@ -158,6 +159,7 @@ export default class Primers extends React.Component {
     render() {
         let results;
         let table;
+      
         const sequence = {
             "A": "T",
             "T": "A",
@@ -170,9 +172,10 @@ export default class Primers extends React.Component {
         let flank = mdata.flank;
         let ssr = fasta.substring(flank, cnt - flank)
 
-
+        console.log(this.state.forward)
         const match = this.state.sequence.match(this.state.forward); 
         const f_start = match.index
+        
         const f_end = match.index + parseInt(match[0].length)
         const reverseSeq = this.state.reversep.split("").reverse().join("").replace(/A|T|G|C/g, function (matched) {
             return sequence[matched];
@@ -181,13 +184,15 @@ export default class Primers extends React.Component {
         const r_match = this.state.sequence.match(reverseSeq)
         const r_start = r_match.index
         const r_end = r_match.index+parseInt(r_match[0].length)
-  
+        
 
         if (this.state.primersdata.f1) {
             
             results = (
 <div>
-                <div className='row'>
+                <Button className="col-md-4 mx-4 my-3" type='primary' onClick={() => downloadCsv(this.state.primersdata)} shape='round' >Download Primers</Button>
+            
+                <div className='row justify-content-center'>
                     <Button className="col-md-2 mx-4" type='primary' onClick={this.getPrimer1} shape='round' >Primer 1</Button>
                     <Button className="col-md-2 mx-4" type='primary' onClick={this.getPrimer2} shape='round' >Primer 2</Button>
                     <Button className="col-md-2 mx-4" type='primary' onClick={this.getPrimer3} shape='round' >Primer 3</Button>
@@ -243,11 +248,17 @@ export default class Primers extends React.Component {
                     </tbody>
 
                 </table>
+                
+               
             )
+            
+            
         }
+        
         else {
             results = ''
         }
+
 
         return (
             <div className='px-0 container'>
@@ -333,6 +344,8 @@ export default class Primers extends React.Component {
                     </div>
                     <div className="col-md-6">
                         {table}
+                        
+                        
                     </div>
 
 
