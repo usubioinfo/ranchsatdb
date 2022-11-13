@@ -59,6 +59,9 @@ export default class Primers extends React.Component {
         this.getPrimer3 = this
             .getPrimer3
             .bind(this)
+        this.runEPCR = this
+            .runEPCR
+            .bind(this)
 
 
 
@@ -155,6 +158,11 @@ export default class Primers extends React.Component {
         })
 
     }
+
+    runEPCR(){
+        window.open("/ranchsatdb/epcr", "_blank");
+       
+    }
     
     render() {
         let results;
@@ -190,8 +198,10 @@ export default class Primers extends React.Component {
             
             results = (
 <div>
+    
                 <Button className="col-md-4 mx-4 my-3" type='primary' onClick={() => downloadCsv(this.state.primersdata)} shape='round' >Download Primers</Button>
-            
+                <Button className="col-md-4 mx-4 my-3" type='primary' onClick={this.runEPCR} shape='round' >Run EPCR</Button>
+                
                 <div className='row justify-content-center'>
                     <Button className="col-md-2 mx-4" type='primary' onClick={this.getPrimer1} shape='round' >Primer 1</Button>
                     <Button className="col-md-2 mx-4" type='primary' onClick={this.getPrimer2} shape='round' >Primer 2</Button>
@@ -199,7 +209,7 @@ export default class Primers extends React.Component {
                     <br></br>
                     
                 </div>
-                <div className='tds mt-5' >
+                <div className='tds mt-2' >
                 {fasta.substring(0, f_start)}
                 {<span style={{ color: 'blue', fontWeight: 700, fontSize:'1rem'  }}>{match[0]}</span>}
                 {fasta.substring(f_end,flank)}
@@ -345,7 +355,7 @@ export default class Primers extends React.Component {
                     <div className="col-md-6">
                         {table}
                         
-                        
+                     {localStorage.setItem('pmdata', JSON.stringify(this.state.primersdata))} 
                     </div>
 
 
@@ -366,6 +376,7 @@ export default class Primers extends React.Component {
 
 
         )
+       
     }
 
 }

@@ -7,6 +7,7 @@ import { Species } from "./pages/Species/Species";
 import {Results} from "./pages/Results/Results";
 import Sequences from './pages/Sequences/Sequences'
 import Primers from './pages/Primers/Primers.jsx';
+import EPCR from './pages/Primers/EPCR.jsx'
 import { Prediction } from 'pages/Prediction/Prediction';
 
 import {
@@ -38,6 +39,9 @@ export class RanchSAT extends Component {
                     
                     </Route>
                     <Route path={`${env.BASE_URL}/primers`} element={<Primers />}>
+                    
+                    </Route>
+                    <Route path={`${env.BASE_URL}/epcr`} element={<EPCR />}>
                     
                     </Route>
                     
