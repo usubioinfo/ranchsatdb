@@ -210,7 +210,7 @@ runPrediction() {
     console.log(res)
     this.closeModel();
     window.open("/ranchsatdb/blastresults", "_blank");
-        localStorage.setItem('results', JSON.stringify(res))
+        localStorage.setItem('resultb', JSON.stringify(res))
  })
    
    
