@@ -209,8 +209,8 @@ runPrediction() {
   .then(res => { // then print response status
     console.log(res.data)
     this.closeModel();
-    // window.open("/ranchsatdb/predresults", "_blank");
-    //     localStorage.setItem('results', JSON.stringify(res.data))
+    window.open("/ranchsatdb/blastresults", "_blank");
+        localStorage.setItem('results', JSON.stringify(res.data))
  })
    
    

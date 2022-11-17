@@ -7,7 +7,7 @@ import {downloadBlast} from '../../components/CSVDownload/BlastDownload';
 const resu = JSON.parse(localStorage.getItem('results'));
 const dfiled = ['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 'qstart', 'qend', 'sstart', 'send', 'evalue', 'bitscore'];
 
-export class PredctionResult extends Component {
+export class BlastResult extends Component {
 
 
     render(){
