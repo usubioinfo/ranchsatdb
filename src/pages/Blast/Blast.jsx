@@ -4,8 +4,8 @@ import Row from 'react-bootstrap/Row';
 import { Slider, Divider } from "antd";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import axios from 'axios'
-import { env } from '../../env';
+
+import { fetchBlast } from "./fetchBlast";
 
 
 
@@ -205,7 +205,7 @@ runPrediction() {
   data.append('program', this.state.bprog)
   
   console.log(data)
-  axios.post(`${env.BACKEND}/api/blast?`, data, {})
+  fetchBlast(data)
   .then(res => { // then print response status
     console.log(res.data)
     this.closeModel();
