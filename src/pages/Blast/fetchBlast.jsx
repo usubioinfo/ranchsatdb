@@ -6,7 +6,7 @@ export const fetchBlast = async (mdata)=>{
 
     const data = res.data
     
-    // console.log(data)
+    console.log(data)
   
 
   return data;
