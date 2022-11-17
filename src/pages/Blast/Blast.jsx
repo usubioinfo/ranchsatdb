@@ -225,7 +225,7 @@ runPrediction() {
 
         <Container >
           <Row className="mb-2">
-            <h4>SSR Prediction</h4>
+            <h4>BLAST Search</h4>
             <Divider />
           </Row>
           <div className="row">
