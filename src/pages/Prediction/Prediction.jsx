@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios'
 import { env } from '../../env';
+import { fetchPrediction } from "./fetchPrediction";
 
 
 
@@ -203,20 +204,20 @@ runPrediction () {
   this.openModel();
 
  console.log(this.state.filename)
-  const data = new FormData() 
-  data.append('file', this.state.filename)
-  data.append('genome', this.state.genome)
-  data.append('minRepeat', this.state.minRepeat)
-  data.append('maxRepeat', this.state.maxRepeat)
-  data.append('mono', this.state.mono)
-  data.append('all', this.state.all)
-  console.log(data)
-  axios.post(`${env.BACKEND}/api/prediction?`, data, {})
+  const fdata = new FormData() 
+  fdata.append('file', this.state.filename)
+  fdata.append('genome', this.state.genome)
+  fdata.append('minRepeat', this.state.minRepeat)
+  fdata.append('maxRepeat', this.state.maxRepeat)
+  fdata.append('mono', this.state.mono)
+  fdata.append('all', this.state.all)
+  console.log(fdata)
+  fetchPrediction(fdata)
   .then(res => { // then print response status
-    console.log(res.data)
+    console.log(res)
     this.closeModel();
     window.open("/ranchsatdb/predresults", "_blank");
-        localStorage.setItem('results', JSON.stringify(res.data))
+        localStorage.setItem('results', JSON.stringify(res))
  })
    
    
