@@ -5,6 +5,8 @@ import './BlastResult.scss'
 import {downloadBlast} from '../../components/CSVDownload/BlastDownload';
 
 const resud = JSON.parse(localStorage.getItem('resultb'));
+
+console.log(resud)
 const dfiled = ['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 'qstart', 'qend', 'sstart', 'send', 'evalue', 'bitscore'];
 
 export class BlastResult extends Component {
