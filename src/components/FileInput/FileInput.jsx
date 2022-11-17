@@ -27,6 +27,7 @@ export default class FileInput extends Component {
     if (file) {
       this.setState({fileName: file.name});
       reader.readAsText(file);
+
     }
   }
 
@@ -37,7 +38,7 @@ export default class FileInput extends Component {
           <Form.Control placeholder="No file selected" className="kbl-form" value={this.state.fileName} readOnly/>
           
             <label htmlFor="file" className="btn kbl-btn-1">Upload</label>
-         
+           
         </InputGroup>
         <input type="file" id="file" className="real-input" onChange={this.uploadFile} />
       </div>

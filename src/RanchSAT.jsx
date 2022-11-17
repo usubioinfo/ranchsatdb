@@ -9,7 +9,8 @@ import Sequences from './pages/Sequences/Sequences'
 import Primers from './pages/Primers/Primers.jsx';
 import EPCR from './pages/Primers/EPCR.jsx'
 import { Prediction } from 'pages/Prediction/Prediction';
-
+import { PredctionResult } from 'pages/Prediction/predictionResult';
+import { Blast } from 'pages/Blast/Blast';
 import {
     BrowserRouter as Router,
     Routes,
@@ -46,6 +47,14 @@ export class RanchSAT extends Component {
                     </Route>
                     
                     <Route path={`${env.BASE_URL}/tools`} element={<Prediction />}>
+                    
+                    </Route>
+
+                    <Route path={`${env.BASE_URL}/blast`} element={<Blast />}>
+                    
+                    </Route>
+
+                    <Route path={`${env.BASE_URL}/predresults`} element={<PredctionResult />}>
                     
                     </Route>
                     <Route path={`${env.BASE_URL}/species/:id`} element={<Species />}></Route>
