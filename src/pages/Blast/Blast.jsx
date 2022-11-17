@@ -110,7 +110,7 @@ export class Blast extends Component {
       isOpen: false,
       bprog: 'blastn',
       word:'20',
-      target: '50',
+      target: '5',
       evalue: '0.01'
 
 
@@ -204,7 +204,7 @@ runBlast() {
   data.append('evalue', this.state.evalue)
   data.append('program', this.state.bprog)
   
-  console.log(data)
+
   fetchBlast(data)
   .then(res => { // then print response status
     console.log(res)
@@ -282,7 +282,7 @@ runBlast() {
                             </div>
 
                             <label className='h6'>Maximum Target Sequences</label>
-              <Slider defaultValue={50} marks={{ 1: '1', 200: '200' }} disabled={false} min={1} max={200} onChange={this.getTarget} />
+              <Slider defaultValue={5} marks={{ 1: '1', 50: '50' }} disabled={false} min={1} max={50} onChange={this.getTarget} />
 
               <label className='h6'>Word Size</label>
               <Slider defaultValue={20} marks={{ 1: '1', 50: '50' }} disabled={false} min={1} max={50} onChange={this.getWord} />
