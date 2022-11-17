@@ -129,8 +129,8 @@ export class Blast extends Component {
     this.getTarget = this.getTarget.bind(this)
     this.getWord = this.getWord.bind(this)
     
-    this.runPrediction = this
-      .runPrediction
+    this.runBlast = this
+      .runBlast
       .bind(this)
 
 
@@ -191,7 +191,7 @@ handleProgram(event) {
     this.setState({evalue: event.target.value})
   }
 
-runPrediction() {
+runBlast() {
   this.openModel();
 
 
@@ -309,7 +309,7 @@ runPrediction() {
                 type="success"
                 shape="round"
                 size="large"
-                onClick={this.runPrediction}
+                onClick={this.runBlast}
               >
                 Run Blast Search{" "}
               </Button>

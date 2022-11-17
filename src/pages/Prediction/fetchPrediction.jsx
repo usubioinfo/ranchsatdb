@@ -4,9 +4,9 @@ export const fetchPrediction = async (mdata)=>{
 
     const res = await axios.post(`${env.BACKEND}/api/blast?`, mdata, {});
 
-    const data = res.data
+    const data = JSON.stringify(res.data)
     
-    console.log(data)
+    
   
 
   return data;

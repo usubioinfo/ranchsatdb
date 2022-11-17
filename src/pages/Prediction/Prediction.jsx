@@ -4,8 +4,7 @@ import Row from 'react-bootstrap/Row';
 import { Slider, Divider } from "antd";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import axios from 'axios'
-import { env } from '../../env';
+
 import { fetchPrediction } from "./fetchPrediction";
 
 
@@ -201,6 +200,7 @@ getAll = (value) => {
 }
 
 runPrediction () {
+  
   this.openModel();
 
  console.log(this.state.filename)
@@ -217,7 +217,7 @@ runPrediction () {
     console.log(res)
     this.closeModel();
     window.open("/ranchsatdb/predresults", "_blank");
-        localStorage.setItem('results', JSON.stringify(res))
+        localStorage.setItem('results', res)
  })
    
    

@@ -54,10 +54,10 @@ export class RanchSAT extends Component {
                     <Route path={`${env.BASE_URL}/blast`} element={<Blast />}>
                     
                     </Route>
-{/* 
+
                     <Route path={`${env.BASE_URL}/predresults`} element={<PredctionResult />}>
                     
-                    </Route> */}
+                    </Route>
                     <Route path={`${env.BASE_URL}/blastresults`} element={<BlastResult />}>
                     
                     </Route>
