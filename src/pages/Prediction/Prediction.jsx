@@ -217,7 +217,7 @@ runPrediction () {
     console.log(res)
     this.closeModel();
     window.open("/ranchsatdb/predresults", "_blank");
-        localStorage.setItem('results', res)
+        localStorage.setItem('resultsp', res)
  })
    
    

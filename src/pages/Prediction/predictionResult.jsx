@@ -4,9 +4,9 @@ import Table from 'react-bootstrap/Table'
 import './predictionResult.scss'
 import {downloadCsv} from '../../components/CSVDownload/CSVDownload';
 
-// const resu = JSON.parse(localStorage.getItem('results'));
+const resu = JSON.parse(localStorage.getItem('resultsp'));
 
-const resu =[]
+// const resu =[]
 
 const dfiled = [
     'ID',
