@@ -199,7 +199,7 @@ getAll = (value) => {
   });
 }
 
-runPrediction() {
+runPrediction () {
   this.openModel();
 
  console.log(this.state.filename)

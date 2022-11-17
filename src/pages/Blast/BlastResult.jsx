@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table'
 import './BlastResult.scss'
 import {downloadBlast} from '../../components/CSVDownload/BlastDownload';
 
-const resu = JSON.parse(localStorage.getItem('results'));
+const resud = JSON.parse(localStorage.getItem('results'));
 const dfiled = ['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 'qstart', 'qend', 'sstart', 'send', 'evalue', 'bitscore'];
 
 export class BlastResult extends Component {
@@ -16,7 +16,7 @@ export class BlastResult extends Component {
                 <h5>Prediction Results</h5>
             <Divider />
             <div className="row flex-lg-row ">
-            <Button className="col-md-2 mx-3 my-3" type='primary' onClick={() => downloadBlast(resu)} shape='round' >Download Results</Button>
+            <Button className="col-md-2 mx-3 my-3" type='primary' onClick={() => downloadBlast(resud)} shape='round' >Download Results</Button>
             <div className="col-md-12">
             
             <Table responsive className="kbl-table table  table-borderless table-responsive">
@@ -38,7 +38,7 @@ export class BlastResult extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                    {resu.map((result, index) => (
+                    {resud.map((result, index) => (
                             <tr>
                                 {Array.from(dfiled).map((_, index) => (
 

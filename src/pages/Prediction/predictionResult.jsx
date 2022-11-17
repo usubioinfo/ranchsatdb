@@ -5,6 +5,7 @@ import './predictionResult.scss'
 import {downloadCsv} from '../../components/CSVDownload/CSVDownload';
 
 const resu = JSON.parse(localStorage.getItem('results'));
+
 const dfiled = [
     'ID',
     'Seq_length',
