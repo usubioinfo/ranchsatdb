@@ -207,10 +207,10 @@ runPrediction() {
   console.log(data)
   fetchBlast(data)
   .then(res => { // then print response status
-    console.log(res.data)
+    console.log(res)
     this.closeModel();
     window.open("/ranchsatdb/blastresults", "_blank");
-        localStorage.setItem('results', JSON.stringify(res.data))
+        localStorage.setItem('results', JSON.stringify(res))
  })
    
    
