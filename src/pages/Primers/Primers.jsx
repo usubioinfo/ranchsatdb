@@ -201,7 +201,7 @@ export default class Primers extends React.Component {
     
                 <Button className="col-md-4 mx-4 my-3" type='primary' onClick={() => downloadCsv(this.state.primersdata)} shape='round' >Download Primers</Button>
                 <Button className="col-md-4 mx-4 my-3" type='primary' onClick={this.runEPCR} shape='round' >Run EPCR</Button>
-                
+                <Divider />
                 <div className='row justify-content-center'>
                     <Button className="col-md-2 mx-4" type='primary' onClick={this.getPrimer1} shape='round' >Primer 1</Button>
                     <Button className="col-md-2 mx-4" type='primary' onClick={this.getPrimer2} shape='round' >Primer 2</Button>
@@ -277,8 +277,8 @@ export default class Primers extends React.Component {
                 <div className="row flex-lg-row g-2">
                     <h5>Design Custom Primers</h5>
                     <div className="col-md-6">
-                        <Table responsive className="kbl-table table  table-borderless">
-                            <thead className="kbl-thead">
+                        <Table responsive className="kbl-table1 table  table-borderless">
+                            <thead className="kbl-thead1">
                                 <tr>
 
                                     <th >Chromosome ID</th>
@@ -317,7 +317,7 @@ export default class Primers extends React.Component {
                     <div className="col-md-1"></div>
                     <div className="col-md-5">
                         <h6 className='mb-4'>Select options to design custom primers</h6>
-                        <div className="row g-2 mb-5">
+                        <div className="row">
                             <div className="col-md-6">
 
                                 <label className='h6'>Melting Point Temperature Range:</label>
@@ -329,7 +329,7 @@ export default class Primers extends React.Component {
                                 <Slider range defaultValue={[40, 60]} marks={{ 0: '0', 100: '100' }} disabled={false} min={0} max={100} onChange={this.getGC} />
                             </div>
                         </div>
-                        <div className="row g2 mb-5">
+                        <div className="row">
                             <div className="col-md-6 ">
                                 <label className='h6'>Primer Size Range</label>
                                 <Slider range defaultValue={[18, 22]} marks={{ 12: '12', 30: '30' }} disabled={false} min={12} max={30} onChange={this.getSize} />
@@ -339,7 +339,7 @@ export default class Primers extends React.Component {
                                 <Slider range defaultValue={[100, 200]} marks={{ 50: '50', 300: '300' }} disabled={false} min={50} max={300} onChange={this.getProduct} />
                             </div>
                         </div>
-                        <div className="row g2 justify-content-center nmb-5">
+                        <div className="row justify-content-center mt-5 mb-3">
                             <div className="col-md-4">
                             <Button  type="primary" shape="round" size='large' onClick={this.getnewData}> Design Primer </Button>
                         </div>
@@ -347,7 +347,8 @@ export default class Primers extends React.Component {
 
                     </div>
                 </div>
-                <div className="row justify-content-center mt-5">
+                <Divider />
+                <div className="row justify-content-center">
 
                     <div className="col-md-6">
                         {results}
