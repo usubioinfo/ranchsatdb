@@ -35,7 +35,7 @@ export class PredctionResult extends Component {
             <Button className="col-md-2 mx-3 my-3" type='primary' onClick={() => downloadCsv(resu)} shape='round' >Download Results</Button>
             <div className="col-md-12">
             
-            <Table responsive className="kbl-table table  table-borderless table-responsive">
+            <Table responsive className="kbl-table table  table-borderless table-responsived">
                     <thead className="kbl-thead">
                         <tr>
                             
