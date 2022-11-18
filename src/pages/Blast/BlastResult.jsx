@@ -15,7 +15,7 @@ export class BlastResult extends Component {
     render(){
         return(
             <div className="container">
-                <h5>Prediction Results</h5>
+                <h5>Blast Results</h5>
             <Divider />
             <div className="row flex-lg-row ">
             <Button className="col-md-2 mx-3 my-3" type='primary' onClick={() => downloadBlast(resud)} shape='round' >Download Results</Button>
