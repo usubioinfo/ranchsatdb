@@ -5,6 +5,7 @@ import Table from 'react-bootstrap/Table';
 import { env } from '../../env';
 import { Divider, Button } from "antd";
 import './Home.scss';
+import CookieConsent from "react-cookie-consent";
 
 export class Home extends Component {
     render() {
@@ -252,6 +253,18 @@ export class Home extends Component {
                     <div className="row justify-content-center">
                     <h6>Copyright 2022 &copy; <a href="http://bioinfo.usu.edu/" target={'_blank'}rel="noreferrer">Kaundal Artifical Intelligence & Advanced Bioinformatics Lab</a> &nbsp;| &nbsp;<a href="https://caas.usu.edu/psc/" target={'_blank'}rel="noreferrer">Department of Plants, Soils and Climate</a> &nbsp; | &nbsp; <a href="https://usu.edu/" target={'_blank'}rel="noreferrer">Utah State University</a></h6>
                     </div>
+
+                    <CookieConsent
+          location="bottom"
+          buttonText="Accept!!"
+          cookieName="myAwesomeCookieName2"
+          style={{ background: "#2B373B" }}
+          buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+          expires={150}
+        >
+          This website uses cookies to enhance the user experience.{" "}
+          {/* <span style={{ fontSize: "10px" }}>This bit of text is small</span> */}
+        </CookieConsent>
                 </Container>
 
             </div>
