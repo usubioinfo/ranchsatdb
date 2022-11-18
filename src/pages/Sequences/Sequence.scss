@@ -1,7 +1,7 @@
 @import '../../scss/colors.scss';
 @import '../../scss/globals';
 
-.kbl-table {
+.kbl-table2 {
 
   overflow: hidden;
   border-radius: $border-radius;
@@ -9,7 +9,7 @@
   border: none;
 
 
-  .kbl-thead {
+  .kbl-thead2 {
     background: $palette-2;
     border-bottom: 1px solid $color-light-grey;
     color: white;
@@ -39,10 +39,7 @@
   }
 }
 
-.table-responsive {
-  padding: 5px 2px;
-  border: none;
-}
+
 
 .fastas {
   word-break: break-all;

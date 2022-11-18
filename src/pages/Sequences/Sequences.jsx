@@ -106,8 +106,8 @@ export default class Sequences extends React.Component {
 
                             return (
 
-                                <Table className='table kbl-table table-borderless' key={item._id}>
-                                    <thead className='kbl-thead'>
+                                <Table className='table kbl-table2 table-borderless' key={item._id}>
+                                    <thead className='kbl-thead2'>
                                         <tr>
                                             <th>Chromosome ID</th>
                                             <th> Start</th>
