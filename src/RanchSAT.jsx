@@ -12,6 +12,8 @@ import { Prediction } from 'pages/Prediction/Prediction';
 import { PredctionResult } from 'pages/Prediction/predictionResult';
 import {BlastResult} from 'pages/Blast/BlastResult';
 import { Blast } from 'pages/Blast/Blast';
+import Help from 'pages/Help/Help'
+import View from 'pages/JBrowse/JBrowse'
 import {
     BrowserRouter as Router,
     Routes,
@@ -59,6 +61,13 @@ export class RanchSAT extends Component {
                     
                     </Route>
                     <Route path={`${env.BASE_URL}/blastresults`} element={<BlastResult />}>
+                    
+                    </Route>
+                    <Route path={`${env.BASE_URL}/help`} element={<Help />}>
+                    
+                    </Route>
+
+                    <Route path={`${env.BASE_URL}/jbrowse`} element={<View />}>
                     
                     </Route>
                     <Route path={`${env.BASE_URL}/species/:id`} element={<Species />}></Route>
