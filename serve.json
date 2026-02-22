@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/ranchsatdb/**",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/**",
+      "destination": "/index.html"
+    }
+  ]
+}

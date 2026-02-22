@@ -4,7 +4,7 @@
         "name"      : "ranchsatdb",
         "script"    : "npx",
         "interpreter": "none",
-        "args": "serve -s build -l 3602"
+        "args": "serve -s build -l 3602 -c serve.json"
       }
     ]
   }

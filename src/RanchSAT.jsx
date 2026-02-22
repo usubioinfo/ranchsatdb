@@ -17,7 +17,8 @@ import View from 'pages/JBrowse/JBrowse'
 import {
     BrowserRouter as Router,
     Routes,
-    Route
+    Route,
+    Navigate
 } from 'react-router-dom';
 
 const BASE_URL = (env && typeof env.BASE_URL === 'string' && env.BASE_URL.trim() !== '')
@@ -75,6 +76,8 @@ export class RanchSAT extends Component {
                     
                     </Route>
                     <Route path={`${BASE_URL}/species/:id`} element={<Species />}></Route>
+                    <Route path="/" element={<Navigate to={`${BASE_URL}/`} replace />} />
+                    <Route path="*" element={<Navigate to={`${BASE_URL}/`} replace />} />
                 </Routes>
                  </Container>
                
