@@ -73,7 +73,9 @@ export const Species = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const results = await axios.get(`${env.BACKEND}/api/sinfo?infotable=${fd[0].info}`);
+            const results = await axios.get(`${env.BACKEND}/api/sinfo`, {
+                params: { infotable: fd[0].info },
+            });
             setinfodata(results.data);
             
             

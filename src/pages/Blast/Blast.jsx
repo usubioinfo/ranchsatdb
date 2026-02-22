@@ -212,6 +212,11 @@ runBlast() {
     window.open("/ranchsatdb/blastresults", "_blank");
         localStorage.setItem('resultb', JSON.stringify(res))
  })
+ .catch(err => {
+    console.error(err);
+    this.closeModel();
+    alert('BLAST job failed. Please try again.');
+ })
    
    
 

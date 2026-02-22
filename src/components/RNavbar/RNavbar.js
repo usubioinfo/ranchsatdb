@@ -8,6 +8,11 @@ import lablogo from './lab_logo_red.png';
 import usulogo from './usulogo2.png';
 import rlogo from './My project.png';
 import { Divider } from 'antd';
+
+const BASE_URL = (env && typeof env.BASE_URL === 'string' && env.BASE_URL.trim() !== '')
+  ? env.BASE_URL
+  : '/ranchsatdb';
+
 class RNavbar extends React.Component {
   constructor(props) {
     super(props);
@@ -47,63 +52,63 @@ class RNavbar extends React.Component {
             <Navbar className="justify-content-center">
 
               <Nav className="">
-                <Nav.Link href={`${env.BASE_URL}/`} className={'home' === this.props.active ? active : className}>
+                <Nav.Link href={`${BASE_URL}/`} className={'home' === this.props.active ? active : className}>
                   Home
                 </Nav.Link>
                 {/* <Nav.Link href= {`${env.BASE_URL}/species/1`} className={'species' === this.props.active ? active : className}>
               Species
             </Nav.Link> */}
                 <NavDropdown title="Species" id="basic-nav-dropdown">
-                  <NavDropdown.Item href={`${env.BASE_URL}/species/1`} className={'species' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/species/1`} className={'species' === this.props.active ? active : className}>
                     <i>Bos taurus</i>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href={`${env.BASE_URL}/species/2`} className={'species' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/species/2`} className={'species' === this.props.active ? active : className}>
                     <i>Capra hircus</i>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href={`${env.BASE_URL}/species/3`} className={'species' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/species/3`} className={'species' === this.props.active ? active : className}>
                     <i>Canis lupus familiaris</i>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href={`${env.BASE_URL}/species/4`} className={'species' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/species/4`} className={'species' === this.props.active ? active : className}>
                     <i>Felis catus</i>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href={`${env.BASE_URL}/species/5`} className={'species' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/species/5`} className={'species' === this.props.active ? active : className}>
                     <i>Equus asinus</i>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href={`${env.BASE_URL}/species/6`} className={'species' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/species/6`} className={'species' === this.props.active ? active : className}>
                     <i>Equus callabus</i>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href={`${env.BASE_URL}/species/7`} className={'species' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/species/7`} className={'species' === this.props.active ? active : className}>
                     <i>Sus sacrofa</i>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href={`${env.BASE_URL}/species/8`} className={'species' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/species/8`} className={'species' === this.props.active ? active : className}>
                     <i>Bubalus bubalis</i>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href={`${env.BASE_URL}/species/9`} className={'species' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/species/9`} className={'species' === this.props.active ? active : className}>
                     <i>Ovis aries</i>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href={`${env.BASE_URL}/species/10`} className={'species' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/species/10`} className={'species' === this.props.active ? active : className}>
                     <i>Bos grunniens</i>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href={`${env.BASE_URL}/species/11`} className={'species' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/species/11`} className={'species' === this.props.active ? active : className}>
                     <i>Apis melifera</i>
                   </NavDropdown.Item>
-                  <NavDropdown.Item href={`${env.BASE_URL}/species/12`} className={'species' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/species/12`} className={'species' === this.props.active ? active : className}>
                     <i>Gallus gallus</i>
                   </NavDropdown.Item>
 
 
                 </NavDropdown>
                 <NavDropdown title="Tools" id="basic-nav-dropdown">
-                  <NavDropdown.Item href={`${env.BASE_URL}/blast`} className={'blast' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/blast`} className={'blast' === this.props.active ? active : className}>
                     BLAST
                   </NavDropdown.Item>
-                  <NavDropdown.Item href={`${env.BASE_URL}/tools`} className={'tools' === this.props.active ? active : className}>
+                  <NavDropdown.Item href={`${BASE_URL}/tools`} className={'tools' === this.props.active ? active : className}>
                     SSR Prediction
                   </NavDropdown.Item>
 
                 </NavDropdown>
 
-                <Nav.Link href={`${env.BASE_URL}/help`} className={'help' === this.props.active ? active : className}>
+                <Nav.Link href={`${BASE_URL}/help`} className={'help' === this.props.active ? active : className}>
                   Help
                 </Nav.Link>
               </Nav>

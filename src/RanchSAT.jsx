@@ -20,11 +20,15 @@ import {
     Route
 } from 'react-router-dom';
 
+const BASE_URL = (env && typeof env.BASE_URL === 'string' && env.BASE_URL.trim() !== '')
+  ? env.BASE_URL
+  : '/ranchsatdb';
+
 export class RanchSAT extends Component {
     constructor(props){
         super(props);
         this.state = {
-            baseUrlLen: env.BASE_URL.split('/').length
+            baseUrlLen: BASE_URL.split('/').length
         }
     }
     render(){
@@ -33,44 +37,44 @@ export class RanchSAT extends Component {
                  <Container fluid className='App px-4'>
                  <RNavbar active={document.location.pathname.split('/')[this.state.baseUrlLen]}/>
                 <Routes>
-                    <Route path={`${env.BASE_URL}/`} element={<Home />}>
+                    <Route path={`${BASE_URL}/`} element={<Home />}>
                     
                     </Route>
-                    <Route path={`${env.BASE_URL}/results`} element={<Results />}>
+                    <Route path={`${BASE_URL}/results`} element={<Results />}>
                     
                     </Route>
-                    <Route path={`${env.BASE_URL}/sequences`} element={<Sequences />}>
+                    <Route path={`${BASE_URL}/sequences`} element={<Sequences />}>
                     
                     </Route>
-                    <Route path={`${env.BASE_URL}/primers`} element={<Primers />}>
+                    <Route path={`${BASE_URL}/primers`} element={<Primers />}>
                     
                     </Route>
-                    <Route path={`${env.BASE_URL}/epcr`} element={<EPCR />}>
+                    <Route path={`${BASE_URL}/epcr`} element={<EPCR />}>
                     
                     </Route>
                     
-                    <Route path={`${env.BASE_URL}/tools`} element={<Prediction />}>
-                    
-                    </Route>
-
-                    <Route path={`${env.BASE_URL}/blast`} element={<Blast />}>
+                    <Route path={`${BASE_URL}/tools`} element={<Prediction />}>
                     
                     </Route>
 
-                    <Route path={`${env.BASE_URL}/predresults`} element={<PredctionResult />}>
-                    
-                    </Route>
-                    <Route path={`${env.BASE_URL}/blastresults`} element={<BlastResult />}>
-                    
-                    </Route>
-                    <Route path={`${env.BASE_URL}/help`} element={<Help />}>
+                    <Route path={`${BASE_URL}/blast`} element={<Blast />}>
                     
                     </Route>
 
-                    <Route path={`${env.BASE_URL}/jbrowse`} element={<View />}>
+                    <Route path={`${BASE_URL}/predresults`} element={<PredctionResult />}>
                     
                     </Route>
-                    <Route path={`${env.BASE_URL}/species/:id`} element={<Species />}></Route>
+                    <Route path={`${BASE_URL}/blastresults`} element={<BlastResult />}>
+                    
+                    </Route>
+                    <Route path={`${BASE_URL}/help`} element={<Help />}>
+                    
+                    </Route>
+
+                    <Route path={`${BASE_URL}/jbrowse`} element={<View />}>
+                    
+                    </Route>
+                    <Route path={`${BASE_URL}/species/:id`} element={<Species />}></Route>
                 </Routes>
                  </Container>
                
@@ -80,4 +84,3 @@ export class RanchSAT extends Component {
         )
     }
 }
-

@@ -37,7 +37,7 @@ class TableComponent extends React.Component {
             SelectedList: [],
             offset: 0,
             perPage: 10,
-            currentPage: 1,
+            currentPage: 0,
             pageCount: 20,
             chromosome: '',
             start: '',
@@ -94,7 +94,20 @@ class TableComponent extends React.Component {
         let min = this.state.Mmin
 
 
-        axios.get(`${env.BACKEND}/api/?page=${page}&size=10&motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}&table=${stable}`)
+        axios.get(`${env.BACKEND}/api/`, {
+            params: {
+                page,
+                size: 10,
+                motif,
+                type,
+                annotation,
+                chromosome,
+                start,
+                stop,
+                min,
+                table: stable,
+            },
+        })
             .then(res => {
                 const List = res.data;
 
@@ -115,7 +128,18 @@ class TableComponent extends React.Component {
         let min = this.state.Mmin
 
 
-        axios.get(`${env.BACKEND}/api/total/?motif=${motif}&type=${type}&annotation=${annotation}&chromosome=${chromosome}&start=${start}&stop=${stop}&min=${min}&table=${stable}`)
+        axios.get(`${env.BACKEND}/api/total/`, {
+            params: {
+                motif,
+                type,
+                annotation,
+                chromosome,
+                start,
+                stop,
+                min,
+                table: stable,
+            },
+        })
             .then(res => {
                 // console.log(res.data)
                 const dl = Math.ceil(res.data / this.state.perPage)

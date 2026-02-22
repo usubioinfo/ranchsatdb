@@ -3627,6 +3627,11 @@ runPrediction () {
     window.open("/ranchsatdb/predresults", "_blank");
         localStorage.setItem('resultsp', res)
  })
+ .catch(err => {
+    console.error(err);
+    this.closeModel();
+    alert('Prediction job failed. Please try again.');
+ })
    
    
 
