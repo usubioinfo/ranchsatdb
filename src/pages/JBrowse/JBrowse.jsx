@@ -4,7 +4,7 @@ import React from 'react'
 import {
   createViewState,
   JBrowseLinearGenomeView,
-} from '@jbrowse/react-linear-genome-view'
+} from '@jbrowse/react-linear-genome-view2'
 
 const assembly = {
   name: 'GRCh38',
@@ -105,6 +105,5 @@ function View() {
 }
 
 export default View
-
 
 
